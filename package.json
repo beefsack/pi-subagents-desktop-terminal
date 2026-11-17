@@ -1,0 +1,33 @@
+{
+  "name": "pi-subagents-desktop-terminal",
+  "version": "0.1.0",
+  "description": "pi-subagents inspector plugin that opens subagent inspectors in your desktop's default terminal window.",
+  "keywords": [
+    "pi-package"
+  ],
+  "type": "module",
+  "license": "MIT",
+  "pi": {
+    "extensions": [
+      "./src/index.ts"
+    ]
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --test \"src/**/*.test.ts\""
+  },
+  "peerDependencies": {
+    "@earendil-works/pi-agent-core": "*",
+    "@earendil-works/pi-coding-agent": "*"
+  },
+  "devDependencies": {
+    "@earendil-works/pi-agent-core": "^1.5.2",
+    "@earendil-works/pi-coding-agent": "^1.5.2",
+    "@types/node": "^24.19.2",
+    "pi-subagents": "^0.89.0",
+    "typescript": "^7.0.2"
+  }
+}
