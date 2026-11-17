@@ -58,7 +58,8 @@ export default function (pi: ExtensionAPI) {
     registration?.dispose();
     const request: InspectorRegistrationRequest = { version: 1, plugin };
     pi.events.emit("pi-subagents:inspector-register:v1", request);
-    if (!request.result) throw new Error("pi-subagents inspector registration is unavailable.");
+    // pi-subagents skips registering its listener inside subagent child sessions.
+    if (!request.result) return;
     if (!request.result.ok) throw request.result.error;
     registration = request.result.registration;
   });
